@@ -1,0 +1,38 @@
+<div class="container ">
+    <div class="row my-5 justify-content-center">
+        <div class="col-md-7 ">
+            <div class="card shadow border border-1 border-success" style="background-color: #eee;">
+                <div class="card-header text-center">
+                    <a href="/create" class="btn btn-primary w-50">Add new data</a>
+                    <a href="/unverified" class="btn btn-danger" style="display:inline-block; width:250px">Unverified Data</a>
+                    <div class="name">
+                        <h3 class="text-center my-1">Verified User</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                   <ul class="p-0" >
+                    
+                        <% user.forEach((element,index )=> { %>
+                            <li class="my-3 bg-white d-flex align-items-center shadow border border-2 border-success justify-content-between">
+                                <p class="d-inline py-5 px-2 bg-warning text-white border border-2 h3 border-success border-start-0"><%= index+1 %> </p>
+                            <div class="verified-user px-3 align-self-start">
+                               <% if (element.photo == 'avater.jpg') { %>
+                                <img style="width: 100px; height:auto" src="/images/<%= element.photo %> " alt="">
+                                <% } else { %>
+                                    <img style="width: 100px; height:auto" src="/userphoto/<%= element.photo %>  " alt="">
+                               <% } %>
+                               <hr>
+                               <h4> Name : <%= element.name %> </h4>
+                               <h6> Email: <%= element.email %> </h6>
+                               <h6> Cell :<%= element.cell %> </h6>
+                            </div>
+                            <a href="/admin/<%= element.id %> " class=" me-2 delete-ver btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                        </li>
+                           <% }) %>
+                    
+                   </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

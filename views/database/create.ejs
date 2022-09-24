@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row my-5 justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <a href="/admin" class="btn btn-primary w-100">Back</a>
+        </div>
+        <div class="card-body">
+          <form
+            action="/create"
+            method="post"
+            enctype="multipart/form-data"
+          >
+          <div class="my-1">
+            <label for="">Name</label>
+            <input type="text" name="name" class="form-control" />
+          </div>
+            <div class="my-1">
+              <label for="">Email</label>
+              <input type="email" name="email" class="form-control" />
+            </div>
+            <div class="my-1">
+              <label for="">Cell</label>
+              <input type="number" name="cell" class="form-control" />
+            </div>
+            <div class="my-1">
+              <label for="">Photo</label>
+              <input
+                type="file"
+                class="form-control"
+                name="photo"
+                multiple
+              />
+            </div>
+            <button class="btn btn-primary w-100" type="submit">
+              Post
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

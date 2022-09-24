@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row my-5 justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow">
+                <div class="card-header">
+                    <a href="/admin" class="btn btn-primary w-100">Back</a>
+                    <h3 class="text-center my-1">Unverified Data</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped data-table">
+                        <thead>
+                            <tr class="align-items-center">
+                                <th>#</th>
+                                <th>photo</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                
+                                <th>Cell</th>
+                                <th>action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% user.forEach(element => { %>
+                                <tr class="align-items-center">
+                                    <td>1</td>
+                                    <td>
+                                        <% if (element.photo == 'avatar.jpg') { %>
+                                            <img style="width: 50px;height:50px" src="/images/<%= element.photo %> " alt="">
+                                            <% } else { %>
+                                                <img style="width: 50px;height:50px" src="/userphoto/<%= element.photo %> " alt="">
+                                        <% } %>
+                                    </td>
+                                    <td><%= element.name %> </td>
+                                    <td><%= element.email %> </td>
+                                   
+                                    <td><%= element.cell %> 
+                                        <a href="/unverified/<%= element.otp %> " class="btn ver-btn btn-sm btn-danger">Verifiy Cell</a>
+                                    </td>
+                                    
+
+                                    <td>
+                                    <a href="/unverified/<%= element.id%>" type="" class="btn btn-sm btn-danger delete-btn"><i class="fas fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
